@@ -1,4 +1,4 @@
-//create by mamestagram development team
+//created by mamestagram development team
 
 const express = require('express');
 const app = express();
