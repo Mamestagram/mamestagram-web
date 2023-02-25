@@ -1,0 +1,37 @@
+header {
+    background-color: aqua;
+}
+
+img.logo {
+    float: left;
+    width: 4%;
+}
+
+li {
+    font-family: Consolas;
+    color: white;
+    float: left;
+    list-style: none;
+    padding: 20px 33px 10px 33px;
+    margin: 5px 30px;
+}
+
+li.home {
+    border-bottom: 2px solid mediumslateblue;
+}
+
+li.home:hover {
+    background-color: mediumslateblue;
+    transition: 500ms all;
+
+}
+
+li.rankings:hover {
+    background-color: lime;
+    transition: 500ms all;
+}
+
+li.community:hover {
+    background-color: hotpink;
+    transition: 500ms all;
+}
