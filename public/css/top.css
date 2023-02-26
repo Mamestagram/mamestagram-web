@@ -1,37 +1,98 @@
-header {
-    background-color: aqua;
+/* ------------------------------------------------- */
+.header {
+    background-color: lightgray;
+    height: 67px;
 }
 
-img.logo {
+.logo {
+    background-position: center;
     float: left;
-    width: 4%;
+    width: 55px;
+    margin: 5px 5px 5px 230px;
+    transition: 150ms all;
+}
+.logo:hover {
+    margin: 2px 2px 0 228px;
+    width: 60px;
 }
 
 li {
-    font-family: Consolas;
-    color: white;
-    float: left;
+    font-family: "Tilt Warp";
+    font-size: 15px;
+    color: black;
+    height: 50px;
     list-style: none;
-    padding: 20px 33px 10px 33px;
-    margin: 5px 30px;
+    padding: 20px 10px;
+    margin: 7px 10px;
+    transition: 500ms all;
 }
 
-li.home {
-    border-bottom: 2px solid mediumslateblue;
+.home {
+    float: left;
+    margin-left: 20px;
+    border-bottom: 3px solid mediumslateblue;
 }
-
-li.home:hover {
+.home:hover {
     background-color: mediumslateblue;
-    transition: 500ms all;
-
 }
 
-li.rankings:hover {
+.leaderboard {
+    float: left;
+}
+.leaderboard:hover {
     background-color: lime;
-    transition: 500ms all;
 }
 
-li.community:hover {
+.community {
+    float: left;
+}
+.community:hover {
     background-color: hotpink;
-    transition: 500ms all;
+}
+
+.help {
+    float: left;
+}
+.help:hover {
+    background-color: orange;
+}
+
+.login {
+    float: right;
+}
+
+.register {
+    margin-right: 250px;
+    float: right;
+}
+/* ------------------------------------------------- */
+.banner {
+    height: 170px;
+    width: 100%;
+    object-fit: cover;
+    filter: blur(5px);
+}
+/* ------------------------------------------------- */
+.main {
+    background-color: midnightblue;
+    height: 1000px;
+}
+
+.welcome-title {
+    font-family: "Gloria Hallelujah";
+    font-size: 80px;
+    color: white;
+    padding: 50px 250px;
+}
+
+.l1 {
+    margin-left: 350px;
+    float: bottom;
+}
+.l2 {
+    margin-left: 460px;
+}
+.l3 {
+    margin-left: 235px;
+    font-weight: bold;
 }
