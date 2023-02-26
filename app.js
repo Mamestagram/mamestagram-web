@@ -3,7 +3,6 @@
 const express = require("express");
 const mysql = require("mysql");
 const session = require("express-session");
-const bcrypt = require("bcrypt");
 const app = express();
 
 app.use(express.static("public"));
@@ -16,12 +15,7 @@ app.use(
     })
 )
 
-const connection = mysql.createConnection({
-    host: "",
-    user: "",
-    password: "",
-    database: ""
-});
+
 
 app.get("/", (req, res) => {
     res.render("top.ejs");

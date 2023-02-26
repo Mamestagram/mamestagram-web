@@ -1,3 +1,4 @@
+/* ------------------------------------------------- */
 .header {
     background-color: lightgray;
     height: 67px;
@@ -20,40 +21,22 @@ li {
     font-size: 15px;
     color: black;
     height: 50px;
+    float: left;
     list-style: none;
     padding: 20px 10px;
     margin: 7px 10px;
     transition: 500ms all;
 }
-
-.home {
-    float: left;
-    margin-left: 20px;
-}
-.home:hover {
+li:hover {
     background-color: mediumslateblue;
 }
 
+.home {
+    margin-left: 20px;
+}
+
 .leaderboard {
-    float: left;
-    border-bottom: 3px solid lime;
-}
-.leaderboard:hover {
-    background-color: lime;
-}
-
-.community {
-    float: left;
-}
-.community:hover {
-    background-color: hotpink;
-}
-
-.help {
-    float: left;
-}
-.help:hover {
-    background-color: orange;
+    border-bottom: 3px solid mediumslateblue;
 }
 
 .login {

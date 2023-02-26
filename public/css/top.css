@@ -1,3 +1,8 @@
+@media screen and (max-width: 1280px) {
+    body {
+        display: inline-block;
+    }
+}
 /* ------------------------------------------------- */
 .header {
     background-color: lightgray;
@@ -8,11 +13,11 @@
     background-position: center;
     float: left;
     width: 55px;
-    margin: 5px 5px 5px 230px;
+    margin: 5px 5px 5px 14.75%;
     transition: 150ms all;
 }
 .logo:hover {
-    margin: 2px 2px 0 228px;
+    margin: 2px 2px 3px 14.645%;
     width: 60px;
 }
 
@@ -21,40 +26,19 @@ li {
     font-size: 15px;
     color: black;
     height: 50px;
+    float: left;
     list-style: none;
     padding: 20px 10px;
     margin: 7px 10px;
     transition: 500ms all;
 }
-
-.home {
-    float: left;
-    margin-left: 20px;
-    border-bottom: 3px solid mediumslateblue;
-}
-.home:hover {
+li:hover {
     background-color: mediumslateblue;
 }
 
-.leaderboard {
-    float: left;
-}
-.leaderboard:hover {
-    background-color: lime;
-}
-
-.community {
-    float: left;
-}
-.community:hover {
-    background-color: hotpink;
-}
-
-.help {
-    float: left;
-}
-.help:hover {
-    background-color: orange;
+.home {
+    margin-left: 20px;
+    border-bottom: 3px solid mediumslateblue;
 }
 
 .login {
@@ -70,7 +54,7 @@ li {
     height: 170px;
     width: 100%;
     object-fit: cover;
-    filter: blur(5px);
+    filter: blur(7px);
 }
 /* ------------------------------------------------- */
 .main {
@@ -87,7 +71,6 @@ li {
 
 .l1 {
     margin-left: 350px;
-    float: bottom;
 }
 .l2 {
     margin-left: 460px;
