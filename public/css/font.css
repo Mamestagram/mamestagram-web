@@ -12,3 +12,8 @@
     font-family: "Gloria Hallelujah";
     src: url("../font/GloriaHallelujah-Regular.ttf");
 }
+
+@font-face {
+    font-family: "RobotoSlab";
+    src: url("../font/RobotoSlab-Regular.ttf");
+}

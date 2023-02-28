@@ -47,3 +47,20 @@ li:hover {
     margin-right: 250px;
     float: right;
 }
+/* ------------------------------------------------- */
+.ranking-data span {
+    font-family: "RobotoSlab";
+    text-align: center;
+}
+
+.ranking {
+    margin: 0 10px;
+}
+
+.country {
+    margin: 0 10px;
+}
+
+.name {
+    margin: 0 100px 0 5px;
+}

@@ -3,25 +3,25 @@
     <head>
         <meta charset = "utf-8">
         <title>LeaderBoard</title>
-        <link rel = "stylesheet" href = "/css/reset.css">
-        <link rel = "stylesheet" href = "/css/font.css">
+        <%- include("link") %>
         <link rel = "stylesheet" href = "/css/leaderboard.css">
-        <link rel = "icon" href = "/image/logo.ico">
     </head>
     <body>
-        <div class = "header">
-            <a href = "/"><img src = "/image/logo.png" class = "logo"></a>
-            <ul>
-                <li class = "home"><a href = "/">Home</a></li>
-                <li class = "leaderboard"><a href = "/leaderboard">LeaderBoard</a></li>
-                <li class = "community">Community</li>
-                <li class = "help">Help</li>
-                <li class = "register">Register</li>
-                <li class = "login">Login</li>
-            </ul>
-        </div>
+        <%- include("header") %>
         <div class = "main">
-
+            <% rankings.forEach((ranking) => { %>
+                <div class = "ranking-data">
+                    <span class = "ranking">#<%= ranking.ranking; %></span>
+                    <span class = "country"><%= ranking.country; %></span>
+                    <span class = "name"><%= ranking.name; %></span>
+                    <span class = "acc"><%= ranking.acc; %>%</span>
+                    <span class = "playcount"><%= ranking.plays; %></span>
+                    <span class = "pp"><%= ranking.pp; %></span>
+                    <span class = "ss"><%= ranking.SS; %></span>
+                    <span class = "s"><%= ranking.S; %></span>
+                    <span class = "a"><%= ranking.A; %></span>
+                </div>
+            <% }); %>
         </div>
     </body>
 </html>

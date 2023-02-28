@@ -3,26 +3,16 @@
     <head>
         <meta charset = "utf-8">
         <title>MamesOsu</title>
-        <link rel = "stylesheet" href = "/css/reset.css">
-        <link rel = "stylesheet" href = "/css/font.css">
+        <%- include("link") %>
         <link rel = "stylesheet" href = "/css/top.css">
-        <link rel = "icon" href = "/image/logo.ico">
     </head>
     <body>
-        <div class = "header">
-            <a href = "/"><img src = "/image/logo.png" class = "logo"></a>
-            <ul>
-                <li class = "home"><a href = "/">Home</a></li>
-                <li class = "leaderboard"><a href = "/leaderboard">LeaderBoard</a></li>
-                <li class = "community">Community</li>
-                <li class = "help">Help</li>
-                <li class = "register">Register</li>
-                <li class = "login">Login</li>
-            </ul>
-        </div>
+        <%- include("header") %>
         <img src = "/image/banner.gif" class = "banner">
         <div class = "main">
-            <h1 class = "welcome-title"><span>Welcome</span><br><span>to</span><br><span>Mamestagram!</span></h1>
+            <div class = "welcome-title">
+                <h1>Welcome<br>to<br><span class = "bold">Mamestagram!</span></h1>
+            </div>
         </div>
     </body>
 </html>

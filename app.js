@@ -23,19 +23,17 @@ app.get("/", (req, res) => {
 
 app.get("/leaderboard", (req, res) => {
     connection.query(
-        "SELECT RANK() OVER(ORDER BY pp DESC) Ranking, country, name, acc, plays AS \"playcount\", pp, xh_count + sh_count AS \"SS\", x_count + s_count AS \"S\", a_count AS \"A\"" +
-        "FROM users" +
-        "JOIN stats" +
-        "ON users.id = stats.id" +
-        "WHERE mode = ?" +
-        "AND NOT users.id = 1" +
+        "SELECT RANK() OVER(ORDER BY pp DESC) ranking, country, name, acc, plays AS \"plays\", pp AS \"pp\", xh_count + x_count AS \"SS\", sh_count + s_count AS \"S\", a_count AS \"A\"\n" +
+        "FROM users\n" +
+        "JOIN stats\n" +
+        "ON users.id = stats.id\n" +
+        "WHERE mode = 0\n" +
+        "AND NOT users.id = 1\n" +
         "ORDER BY pp DESC;",
-        [0],
         (error, results) => {
-            console.log(results);
-            res.render("leaderboard.ejs")
+            res.render("leaderboard.ejs", {rankings: results});
         }
-    )
+    );
 });
 
 app.listen(3000);
