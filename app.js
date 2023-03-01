@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
 
 app.get("/leaderboard", (req, res) => {
     connection.query(
-        "SELECT RANK() OVER(ORDER BY pp DESC) ranking, country, name, acc, plays AS \"plays\", pp AS \"pp\", xh_count + x_count AS \"SS\", sh_count + s_count AS \"S\", a_count AS \"A\"\n" +
+        "SELECT RANK() OVER(ORDER BY pp DESC) ranking, country, name, acc, plays, pp, xh_count + x_count AS \"SS\", sh_count + s_count AS \"S\", a_count AS \"A\"\n" +
         "FROM users\n" +
         "JOIN stats\n" +
         "ON users.id = stats.id\n" +

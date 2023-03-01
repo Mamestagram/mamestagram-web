@@ -17,3 +17,8 @@
     font-family: "RobotoSlab";
     src: url("../font/RobotoSlab-Regular.ttf");
 }
+
+@font-face {
+    font-family: "SecularOne";
+    src: url("../font/SecularOne-Regular.ttf");
+}

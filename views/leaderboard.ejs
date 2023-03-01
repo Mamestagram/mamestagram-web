@@ -9,19 +9,22 @@
     <body>
         <%- include("header") %>
         <div class = "main">
-            <% rankings.forEach((ranking) => { %>
-                <div class = "ranking-data">
-                    <span class = "ranking">#<%= ranking.ranking; %></span>
-                    <span class = "country"><%= ranking.country; %></span>
-                    <span class = "name"><%= ranking.name; %></span>
-                    <span class = "acc"><%= ranking.acc; %>%</span>
-                    <span class = "playcount"><%= ranking.plays; %></span>
-                    <span class = "pp"><%= ranking.pp; %></span>
-                    <span class = "ss"><%= ranking.SS; %></span>
-                    <span class = "s"><%= ranking.S; %></span>
-                    <span class = "a"><%= ranking.A; %></span>
-                </div>
-            <% }); %>
+            <div class = "ranking-table">
+                <% rankings.forEach((ranking) => { %>
+                    <div class = "ranking-data">
+                        <span class = "ranking">#<%= ranking.ranking; %></span>
+                        <span class = "flag-icon flag-icon-<%= ranking.country; %>"></span>
+                        <span class = "name"><%= ranking.name; %></span>
+                        <span class = "acc"><%= ranking.acc.toFixed(2); %>%</span>
+                        <span class = "playcount"><%= ranking.plays.toLocaleString(); %></span>
+                        <span class = "pp"><%= ranking.pp.toLocaleString(); %></span>
+                        <span class = "ss"><%= ranking.SS.toLocaleString(); %></span>
+                        <span class = "s"><%= ranking.S.toLocaleString(); %></span>
+                        <span class = "a"><%= ranking.A.toLocaleString(); %></span>
+                        <br>
+                    </div>
+                <% }); %>
+            </div>
         </div>
     </body>
 </html>
