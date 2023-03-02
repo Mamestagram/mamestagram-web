@@ -15,12 +15,7 @@ app.use(
     })
 )
 
-const connection = mysql.createConnection({
-    host: "localhost",
-    user: "mamestagram",
-    password: "meronsan00",
-    database: "private"
-});
+
 
 app.get("/home", (req, res) => {
     res.render("top.ejs");
