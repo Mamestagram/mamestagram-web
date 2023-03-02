@@ -15,7 +15,12 @@ app.use(
     })
 )
 
-
+const connection = mysql.createConnection({
+    host: "localhost",
+    user: "mamestagram",
+    password: "meronsan00",
+    database: "private"
+});
 
 app.get("/home", (req, res) => {
     res.render("top.ejs");
@@ -37,6 +42,10 @@ app.get("/leaderboard/mode=:id", (req, res) => {
             res.render("leaderboard.ejs", {rankings: results});
         }
     );
+});
+
+app.get("/help", (req, res) => {
+    res.render("help.ejs");
 });
 
 app.listen(3000);
