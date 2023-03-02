@@ -8,40 +8,54 @@
     background-position: center;
     float: left;
     width: 55px;
-    margin: 5px 5px 5px 14.75%;
+    margin: 5px 5px 5px 230px;
     transition: 150ms all;
 }
 .logo:hover {
-    margin: 2px 2px 3px 14.645%;
+    margin: 2px 2px 0 228px;
     width: 60px;
 }
 
-li {
+.menu div {
     font-family: "Tilt Warp";
     font-size: 15px;
     color: black;
     height: 50px;
-    float: left;
-    list-style: none;
     padding: 20px 10px;
     margin: 7px 10px;
     transition: 500ms all;
 }
-li:hover {
+.menu div:hover {
     background-color: mediumslateblue;
 }
 
 .home {
     margin-left: 20px;
+    float: left;
+}
+
+.home-text {
     border-bottom: 3px solid mediumslateblue;
 }
 
-.login {
-    float: right;
+.leaderboard {
+    float: left;
+}
+
+.community {
+    float: left;
+}
+
+.help {
+    float: left;
 }
 
 .register {
     margin-right: 250px;
+    float: right;
+}
+
+.login {
     float: right;
 }
 /* ------------------------------------------------- */

@@ -15,21 +15,29 @@ app.use(
     })
 )
 
+const connection = mysql.createConnection({
+    host: "localhost",
+    user: "mamestagram",
+    password: "meronsan00",
+    database: "private"
+});
 
-
-app.get("/", (req, res) => {
+app.get("/home", (req, res) => {
     res.render("top.ejs");
 });
 
-app.get("/leaderboard", (req, res) => {
+app.get("/leaderboard/mode=:id", (req, res) => {
     connection.query(
-        "SELECT RANK() OVER(ORDER BY pp DESC) ranking, country, name, acc, plays, pp, xh_count + x_count AS \"SS\", sh_count + s_count AS \"S\", a_count AS \"A\"\n" +
-        "FROM users\n" +
-        "JOIN stats\n" +
-        "ON users.id = stats.id\n" +
-        "WHERE mode = 0\n" +
-        "AND NOT users.id = 1\n" +
+        "SELECT RANK() OVER(ORDER BY pp DESC) ranking, country, name, acc, plays, pp, " +
+        "xh_count + x_count AS 'SS', sh_count + s_count AS 'S', a_count AS 'A' " +
+        "FROM users " +
+        "JOIN stats " +
+        "ON users.id = stats.id " +
+        "WHERE mode = ? " +
+        "AND NOT users.id = 1 " +
+        "AND NOT acc = 0 " +
         "ORDER BY pp DESC;",
+        [req.params.id],
         (error, results) => {
             res.render("leaderboard.ejs", {rankings: results});
         }
