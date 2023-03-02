@@ -43,12 +43,12 @@ app.get("/help", (req, res) => {
     res.render("help.ejs");
 });
 
-app.get("/login" ,(req, res) => {
-    res.render("login.ejs");
-});
-
 app.get("/register", (req, res) => {
     res.render("register.ejs");
+});
+
+app.get("/login" ,(req, res) => {
+    res.render("login.ejs");
 });
 
 app.listen(3000);
