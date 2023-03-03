@@ -25,7 +25,19 @@ app.get("/home", (req, res) => {
     res.render("top.ejs");
 });
 
-app.get("/leaderboard/mode=:id", (req, res) => {
+app.get("/leaderboard/mode=:mode/relax=:flag", (req, res) => {
+    let mode;
+    if (req.params.flag === "1") {
+        if (req.params.mode < 3) {
+            mode = req.params.mode + 4;
+        }
+        else {
+            mode = req.params.mode + 5;
+        }
+    }
+    else {
+        mode = req.params.mode;
+    }
     connection.query(
         "SELECT RANK() OVER(ORDER BY pp DESC) ranking, country, name, acc, plays, pp, " +
         "xh_count + x_count AS 'SS', sh_count + s_count AS 'S', a_count AS 'A' " +
@@ -36,9 +48,9 @@ app.get("/leaderboard/mode=:id", (req, res) => {
         "AND NOT users.id = 1 " +
         "AND NOT acc = 0 " +
         "ORDER BY pp DESC;",
-        [req.params.id],
+        [mode],
         (error, results) => {
-            res.render("leaderboard.ejs", {rankings: results});
+            res.render("leaderboard.ejs", {rankings: results, mode: req.params.mode, flag: req.params.flag});
         }
     );
 });

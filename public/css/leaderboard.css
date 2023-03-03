@@ -8,31 +8,74 @@
     background-color: hotpink;
 }
 /* ------------------------------------------------- */
-.selection {
-    background-color: white;
-    width: 74.3%;
+.selection-mode {
     display: flex;
-    margin: 0 12.8%;
     font-size: 20px;
+    padding: 50px 0 10px 0;
+    margin-left: 12.8%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
-.selection div {
-    float: left;
-    height: 30px;
-    text-align: center;
-    border-top: 1mm solid black;
-    border-bottom: 1mm solid black;
-    border-left: 1mm solid black;
+.selection-mode li {
+    background-color: white;
+    border-top: 0.7mm solid black;
+    border-bottom: 0.7mm solid black;
+    border-left: 0.7mm solid black;
+    width: 21.3%;
 }
 
-.selection img {
+.selection-mode img {
+    position: relative;
+    bottom: 30%;
     width: 20px;
-    float: left;
+    margin-left: 225%;
     filter: invert(100%);
 }
 
+.selection-mode div {
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    width: 15%;
+    text-align: center;
+}
+
+.mania {
+    border-right: 0.7mm solid black;
+}
+
+.taiko-text {
+    margin-left: 5px;
+}
+
+.catch-text {
+    margin-left: 5px;
+}
+
 .mania-text {
-    border-right: 1mm solid black;
+    margin-left: 5px;
+}
+/* ------------------------------------------------- */
+.selection-relax {
+    display: flex;
+    font-size: 20px;
+    padding: 30px 0;
+    margin-left: 12.8%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.selection-relax li {
+    background-color: white;
+    border: 0.7mm solid black;
+    height: 40px;
+    line-height: 40px;
+    width: 32.5%;
+    margin: 0 5%;
+    text-align: center;
 }
 /* ------------------------------------------------- */
 .ranking-table {

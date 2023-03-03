@@ -10,26 +10,38 @@
         <%- include("header") %>
         <img src = "/image/banner.gif" class = "banner">
         <div class = "main">
-            <ul class = "selection">
+            <ul class = "selection-mode">
                 <li class = "std">
-                    <a href = "/leaderboard/mode=0">
-                        <div class = "std-text"><img src = "/image/mode-osu.png">Standard</div>
-                    </a>
+                    <div class = "std-text">
+                        <a href = "/leaderboard/mode=0/relax=<%= flag; %>"><img src = "/image/mode-osu.png">Standard</a>
+                    </div>
                 </li>
                 <li class = "taiko">
-                    <a href = "/leaderboard/mode=1">
-                        <div class = "taiko-text"><img src = "/image/mode-taiko.png">Taiko</div>
-                    </a>
+                    <div class = "taiko-text">
+                        <a href = "/leaderboard/mode=1/relax=<%= flag; %>"><img src = "/image/mode-taiko.png">Taiko</a>
+                    </div>
                 </li>
                 <li class = "catch">
-                    <a href = "/leaderboard/mode=2">
-                        <div class = "catch-text"><img src = "/image/mode-fruits.png">Catch</div>
-                    </a>
+                    <div class = "catch-text">
+                        <a href = "/leaderboard/mode=2/relax=<%= flag; %>"><img src = "/image/mode-fruits.png">Catch</a>
+                    </div>
                 </li>
                 <li class = "mania">
-                    <a href = "/leaderboard/mode=3">
-                        <div class = "mania-text"><img src = "/image/mode-mania.png">Mania</div>
-                    </a>
+                    <div class = "mania-text">
+                        <a href = "/leaderboard/mode=3/relax=<%= flag; %>"><img src = "/image/mode-mania.png">Mania</a>
+                    </div>
+                </li>
+            </ul>
+            <ul class = "selection-relax">
+                <li class = "classic">
+                    <div class = "classic-text">
+                        <a href = "/leaderboard/mode=<%= mode; %>/relax=0">Classic</a>
+                    </div>
+                </li>
+                <li class = "relax">
+                    <div class = "relax-text">
+                        <a href = "/leaderboard/mode=<%= mode; %>/relax=1">Relax</a>
+                    </div>
                 </li>
             </ul>
             <div class = "ranking-table">
