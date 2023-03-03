@@ -17,6 +17,10 @@ app.use(
 
 
 
+app.get("/", (req, res) => {
+   res.redirect("/home");
+});
+
 app.get("/home", (req, res) => {
     res.render("top.ejs");
 });
