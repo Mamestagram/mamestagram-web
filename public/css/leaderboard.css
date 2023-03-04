@@ -8,21 +8,27 @@
     background-color: hotpink;
 }
 /* ------------------------------------------------- */
-.selection-mode {
+.mode {
     display: flex;
+    padding: 10px 12.8%;
 }
 
-.selection-mode li {
-    padding: 20px 1%;
+.mode li {
+    padding: 10px 1%;
 }
 
-.selection-mode img {
+.mode img {
     width: 45px;
-    filter: invert(20%);
+    filter: invert(30%);
+    opacity: 95%;
+}
+.mode img:hover {
+    filter: invert(0%);
+    opacity: 100%;
 }
 
 .std {
-    margin-left: 68%;
+    margin-left: 77%;
 }
 /* ------------------------------------------------- */
 .ranking-table {

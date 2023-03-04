@@ -26,38 +26,38 @@ app.get("/home", (req, res) => {
 });
 
 app.get("/leaderboard/mode=:mode/special=:sp", (req, res) => {
-    let mode;
+    let mode_num;
     if (req.params.sp === "none") {
         switch (req.params.mode) {
             case "std":
-                mode = 0;
+                mode_num = 0;
                 break;
             case "taiko":
-                mode = 1;
+                mode_num = 1;
                 break;
             case "ctb":
-                mode = 2;
+                mode_num = 2;
                 break;
             case "mania":
-                mode = 3;
+                mode_num = 3;
                 break;
         }
     }
     else if (req.params.sp === "rx") {
         switch (req.params.mode) {
             case "std":
-                mode = 4;
+                mode_num = 4;
                 break;
             case "taiko":
-                mode = 5;
+                mode_num = 5;
                 break;
             case "ctb":
-                mode = 6;
+                mode_num = 6;
                 break;
         }
     }
     else if (req.params.sp === "ap") {
-        mode = 8;
+        mode_num = 8;
     }
     connection.query(
         "SELECT RANK() OVER(ORDER BY pp DESC) ranking, country, name, acc, plays, pp, " +
@@ -69,7 +69,7 @@ app.get("/leaderboard/mode=:mode/special=:sp", (req, res) => {
         "AND NOT users.id = 1 " +
         "AND NOT acc = 0 " +
         "ORDER BY pp DESC;",
-        [mode],
+        [mode_num],
         (error, results) => {
             res.render("leaderboard.ejs", {rankings: results, mode: req.params.mode, sp: req.params.sp});
         }
@@ -86,6 +86,10 @@ app.get("/register", (req, res) => {
 
 app.get("/login" ,(req, res) => {
     res.render("login.ejs");
+});
+
+app.get("/profile/id=:id/mode=:mode/special=:sp", (req, res) => {
+    res.render("profile.ejs");
 });
 
 app.listen(3000);

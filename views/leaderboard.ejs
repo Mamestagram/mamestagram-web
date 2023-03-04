@@ -5,33 +5,36 @@
         <title>LeaderBoard</title>
         <%- include("link") %>
         <link rel = "stylesheet" href = "/css/leaderboard.css">
+        <link rel = "stylesheet" href = "/css/mode-<%= mode %>.css">
     </head>
     <body>
         <%- include("header") %>
         <img src = "/image/banner.gif" class = "banner">
         <div class = "main">
-            <ul class = "selection-mode">
-                <li class = "std">
-                    <a href = "/leaderboard/mode=std/special=<%= sp %>">
-                        <img src = "/image/mode-osu.png">
-                    </a>
-                </li>
-                <li class = "taiko">
-                    <a href = "/leaderboard/mode=taiko/special=<%= sp %>">
-                        <img src = "/image/mode-taiko.png">
-                    </a>
-                </li>
-                <li class = "catch">
-                    <a href = "/leaderboard/mode=ctb/special=<%= sp %>">
-                        <img src = "/image/mode-fruits.png">
-                    </a>
-                </li>
-                <li class = "mania">
-                    <a href = "/leaderboard/mode=mania/special=<%= sp %>">
-                        <img src = "/image/mode-mania.png">
-                    </a>
-                </li>
-            </ul>
+            <div class = "selection">
+                <ul class = "mode">
+                    <li class = "std">
+                        <a href = "/leaderboard/mode=std/special=<%= sp %>">
+                            <img src = "/image/mode-osu.png">
+                        </a>
+                    </li>
+                    <li class = "taiko">
+                        <a href = "/leaderboard/mode=taiko/special=<%= sp %>">
+                            <img src = "/image/mode-taiko.png">
+                        </a>
+                    </li>
+                    <li class = "catch">
+                        <a href = "/leaderboard/mode=ctb/special=<%= sp %>">
+                            <img src = "/image/mode-fruits.png">
+                        </a>
+                    </li>
+                    <li class = "mania">
+                        <a href = "/leaderboard/mode=mania/special=<%= sp %>">
+                            <img src = "/image/mode-mania.png">
+                        </a>
+                    </li>
+                </ul>
+            </div>
             <div class = "ranking-table">
                 <div class = table-title>
                     <span class = "ranking-null"></span>
