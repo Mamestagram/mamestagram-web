@@ -10,72 +10,19 @@
 /* ------------------------------------------------- */
 .selection-mode {
     display: flex;
-    font-size: 20px;
-    padding: 50px 0 10px 0;
-    margin-left: 12.8%;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
 }
 
 .selection-mode li {
-    background-color: white;
-    border-top: 0.7mm solid black;
-    border-bottom: 0.7mm solid black;
-    border-left: 0.7mm solid black;
-    width: 21.3%;
+    padding: 20px 1%;
 }
 
 .selection-mode img {
-    position: relative;
-    bottom: 30%;
-    width: 20px;
-    margin-left: 225%;
-    filter: invert(100%);
+    width: 45px;
+    filter: invert(20%);
 }
 
-.selection-mode div {
-    float: left;
-    height: 40px;
-    line-height: 40px;
-    width: 15%;
-    text-align: center;
-}
-
-.mania {
-    border-right: 0.7mm solid black;
-}
-
-.taiko-text {
-    margin-left: 5px;
-}
-
-.catch-text {
-    margin-left: 5px;
-}
-
-.mania-text {
-    margin-left: 5px;
-}
-/* ------------------------------------------------- */
-.selection-relax {
-    display: flex;
-    font-size: 20px;
-    padding: 30px 0;
-    margin-left: 12.8%;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-.selection-relax li {
-    background-color: white;
-    border: 0.7mm solid black;
-    height: 40px;
-    line-height: 40px;
-    width: 32.5%;
-    margin: 0 5%;
-    text-align: center;
+.std {
+    margin-left: 68%;
 }
 /* ------------------------------------------------- */
 .ranking-table {

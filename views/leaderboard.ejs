@@ -12,36 +12,24 @@
         <div class = "main">
             <ul class = "selection-mode">
                 <li class = "std">
-                    <div class = "std-text">
-                        <a href = "/leaderboard/mode=0/relax=<%= flag; %>"><img src = "/image/mode-osu.png">Standard</a>
-                    </div>
+                    <a href = "/leaderboard/mode=std/special=<%= sp %>">
+                        <img src = "/image/mode-osu.png">
+                    </a>
                 </li>
                 <li class = "taiko">
-                    <div class = "taiko-text">
-                        <a href = "/leaderboard/mode=1/relax=<%= flag; %>"><img src = "/image/mode-taiko.png">Taiko</a>
-                    </div>
+                    <a href = "/leaderboard/mode=taiko/special=<%= sp %>">
+                        <img src = "/image/mode-taiko.png">
+                    </a>
                 </li>
                 <li class = "catch">
-                    <div class = "catch-text">
-                        <a href = "/leaderboard/mode=2/relax=<%= flag; %>"><img src = "/image/mode-fruits.png">Catch</a>
-                    </div>
+                    <a href = "/leaderboard/mode=ctb/special=<%= sp %>">
+                        <img src = "/image/mode-fruits.png">
+                    </a>
                 </li>
                 <li class = "mania">
-                    <div class = "mania-text">
-                        <a href = "/leaderboard/mode=3/relax=<%= flag; %>"><img src = "/image/mode-mania.png">Mania</a>
-                    </div>
-                </li>
-            </ul>
-            <ul class = "selection-relax">
-                <li class = "classic">
-                    <div class = "classic-text">
-                        <a href = "/leaderboard/mode=<%= mode; %>/relax=0">Classic</a>
-                    </div>
-                </li>
-                <li class = "relax">
-                    <div class = "relax-text">
-                        <a href = "/leaderboard/mode=<%= mode; %>/relax=1">Relax</a>
-                    </div>
+                    <a href = "/leaderboard/mode=mania/special=<%= sp %>">
+                        <img src = "/image/mode-mania.png">
+                    </a>
                 </li>
             </ul>
             <div class = "ranking-table">
@@ -58,15 +46,15 @@
                 </div>
                 <% rankings.forEach((ranking) => { %>
                     <div class = "ranking-data">
-                        <span class = "ranking">#<%= ranking.ranking; %></span>
-                        <span class = "flag-icon flag-icon-<%= ranking.country; %>"></span>
+                        <span class = "ranking">#<%= ranking.ranking %></span>
+                        <span class = "flag-icon flag-icon-<%= ranking.country %>"></span>
                         <span class = "name"><%= ranking.name; %></span>
-                        <span class = "acc"><%= ranking.acc.toFixed(2); %>%</span>
-                        <span class = "playcount"><%= ranking.plays.toLocaleString(); %></span>
-                        <span class = "pp"><%= ranking.pp.toLocaleString(); %></span>
-                        <span class = "ss"><%= ranking.SS.toLocaleString(); %></span>
-                        <span class = "s"><%= ranking.S.toLocaleString(); %></span>
-                        <span class = "a"><%= ranking.A.toLocaleString(); %></span>
+                        <span class = "acc"><%= ranking.acc.toFixed(2) %>%</span>
+                        <span class = "playcount"><%= ranking.plays.toLocaleString() %></span>
+                        <span class = "pp"><%= ranking.pp.toLocaleString() %></span>
+                        <span class = "ss"><%= ranking.SS.toLocaleString() %></span>
+                        <span class = "s"><%= ranking.S.toLocaleString() %></span>
+                        <span class = "a"><%= ranking.A.toLocaleString() %></span>
                     </div>
                 <% }); %>
             </div>
