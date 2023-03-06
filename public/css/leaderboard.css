@@ -10,11 +10,12 @@
 /* ------------------------------------------------- */
 .mode {
     display: flex;
-    padding: 10px 12.8%;
+    padding: 10px 0;
 }
 
 .mode li {
     padding: 10px 1%;
+    float: right;
 }
 
 .mode img {
@@ -28,7 +29,7 @@
 }
 
 .std {
-    margin-left: 77%;
+    margin-left: 68%;
 }
 /* ------------------------------------------------- */
 .ranking-table {
@@ -91,6 +92,9 @@
     padding: 7px 0;
     margin: 5px 0;
 }
+.ranking-data:hover {
+    background-color: pink;
+}
 
 .ranking-data span {
     height: 30px;
@@ -113,6 +117,13 @@
 .name {
     width: 30%;
     margin-left: 5px;
+}
+
+.text {
+    padding: 0 7px;
+}
+.text:hover {
+    border-bottom: 2px solid black;
 }
 
 .acc {

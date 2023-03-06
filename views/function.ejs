@@ -1,0 +1,18 @@
+<% const getMode = (n) => {
+    const mods = ["nf", "ez", "", "hd", "hr", "sd", "dt", "", "ht", "nc", "fl"];
+    const mod = new Array(0);
+    if (n >= 16416) {
+        mods.push("pf");
+        n -= 16416;
+    }
+    for (let i = 10; n !== 0; i--) {
+        if (i !== 2 && i !== 7 && n >= Math.pow(2, i)) {
+            if (i === 9) {
+                n -= Math.pow(2, 6);
+            }
+            mod.push(mods[i]);
+            n -= Math.pow(2, i);
+        }
+    }
+    return mod;
+}%>

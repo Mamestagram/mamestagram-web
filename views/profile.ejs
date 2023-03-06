@@ -1,4 +1,45 @@
+<%- include("function") %>
 <!DOCTYPE html>
 <html lang = "ja">
-
+    <head>
+        <meta charset = "utf-8">
+        <title><%= info.name %>'s Profile</title>
+        <%- include("link") %>
+        <link rel = "stylesheet" href = "/css/profile.css">
+    </head>
+    <body>
+        <%- include("header") %>
+        <div class = "main">
+            <% bestpp.forEach((map) => { %>
+                <div>
+                    <span><%= map.grade %></span>
+                    <span><%= map.title %></span>
+                    <span><%= map.artist %></span>
+                    <span><%= map.mods %></span>
+                    <span><%= map.acc.toFixed(2) %></span>
+                    <span><%= Math.round(map.pp).toLocaleString() %></span>
+                </div>
+            <% }); %>
+            <% bestplaytimes.forEach((map) => { %>
+                <div>
+                    <span><%= map.title %></span>
+                    <span><%= map.artist %></span>
+                    <span><%= map.creator %></span>
+                    <span><%= map.mode %></span>
+                    <span><%= map.playtimes.toLocaleString() %></span>
+                </div>
+            <% }); %>
+            <% recentplays.forEach((map) => { %>
+                <div>
+                    <span><%= map.grade %></span>
+                    <span><%= map.title %></span>
+                    <span><%= map.artist %></span>
+                    <span><%= map.mode %></span>
+                    <span><%= map.mods %></span>
+                    <span><%= map.acc.toFixed(2) %></span>
+                    <span><%= Math.round(map.pp).toLocaleString() %></span>
+                </div>
+            <% }); %>
+        </div>
+    </body>
 </html>
