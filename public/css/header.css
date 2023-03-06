@@ -2,6 +2,7 @@
 .header {
     background-color: lightgray;
     height: 67px;
+    box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.5);
 }
 
 .logo {
@@ -30,7 +31,7 @@
 }
 
 .home {
-    margin-left: 20px;
+    margin-left: 10px;
     float: left;
 }
 

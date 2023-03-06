@@ -1,4 +1,12 @@
-<%- include("function") %>
+<% const getPlayTime = (n) => {
+    let res = "";
+    res += Math.floor(n / 86400) + "d ";
+    n %= 86400;
+    res += Math.floor(n / 3600) + "h ";
+    n %= 3600;
+    res += Math.floor(n / 60) + "m";
+    return res;
+} %>
 <!DOCTYPE html>
 <html lang = "ja">
     <head>
@@ -9,37 +17,37 @@
     </head>
     <body>
         <%- include("header") %>
+        <div class = "info-title">
+            <h1>Player Information</h1>
+        </div>
         <div class = "main">
-            <% bestpp.forEach((map) => { %>
-                <div>
-                    <span><%= map.grade %></span>
-                    <span><%= map.title %></span>
-                    <span><%= map.artist %></span>
-                    <span><%= map.mods %></span>
-                    <span><%= map.acc.toFixed(2) %></span>
-                    <span><%= Math.round(map.pp).toLocaleString() %></span>
-                </div>
-            <% }); %>
-            <% bestplaytimes.forEach((map) => { %>
-                <div>
-                    <span><%= map.title %></span>
-                    <span><%= map.artist %></span>
-                    <span><%= map.creator %></span>
-                    <span><%= map.mode %></span>
-                    <span><%= map.playtimes.toLocaleString() %></span>
-                </div>
-            <% }); %>
-            <% recentplays.forEach((map) => { %>
-                <div>
-                    <span><%= map.grade %></span>
-                    <span><%= map.title %></span>
-                    <span><%= map.artist %></span>
-                    <span><%= map.mode %></span>
-                    <span><%= map.mods %></span>
-                    <span><%= map.acc.toFixed(2) %></span>
-                    <span><%= Math.round(map.pp).toLocaleString() %></span>
-                </div>
-            <% }); %>
+            <div class = "player">
+                <span class = "flag-icon flag-icon-<%= info.country %>"></span>
+                <span class = "name"><%= info.name %></span>
+                <span class = "std-icon"><img src = "/image/mode/osu.png"></span>
+                <span class = "taiko-icon"><img src = "/image/mode/taiko.png"></span>
+                <span class = "catch-icon"><img src = "/image/mode/fruits.png"></span>
+                <span class = "mania-icon"><img src = "/image/mode/mania.png"></span>
+            </div>
+            <div class = "player-info">
+                <span class = "global">#<%= info.GRanking %></span>
+                <span class = "country">#<%= info.CRanking %></span><br>
+                <span class = "medals"><%= info.medals %></span>
+                <span class = "pp"><%= info.pp %></span>
+                <span class = "playtime"><%= getPlayTime(info.playtime) %></span>
+                <span class = "xh"><%= info.xh_count %></span>
+                <span class = "x"><%= info.x_count %></span>
+                <span class = "sh"><%= info.sh_count %></span>
+                <span class = "s"><%= info.s_count %></span>
+                <span class = "a"><%= info.a_count %></span><br>
+                <span class = "acc"><%= info.acc %></span>
+                <span class = "playcount"><%= info.plays %></span>
+                <span class = "hits"><%= info.total_hits %></span>
+                <span class = "ranked-score"><%= info.rscore %></span>
+                <span class = "total-score"><%= info.tscore %></span>
+                <span class = "maxcombo"><%= info.max_combo %></span>
+                <span class = "replayed"><%= info.replay_views %></span>
+            </div>
         </div>
     </body>
 </html>

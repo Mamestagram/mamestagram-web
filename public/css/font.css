@@ -4,21 +4,16 @@
 }
 
 @font-face {
-    font-family: "けいふぉんと";
-    src: url("../font/keifont.ttf");
-}
-
-@font-face {
     font-family: "Gloria Hallelujah";
     src: url("../font/GloriaHallelujah-Regular.ttf");
 }
 
 @font-face {
-    font-family: "RobotoSlab";
-    src: url("../font/RobotoSlab-Regular.ttf");
+    font-family: "SecularOne";
+    src: url("../font/SecularOne-Regular.ttf");
 }
 
 @font-face {
-    font-family: "SecularOne";
-    src: url("../font/SecularOne-Regular.ttf");
+    font-family: "Caveat";
+    src: url("../font/Caveat-Regular.ttf");
 }

@@ -1,0 +1,14 @@
+/* ------------------------------------------------- */
+.info-title {
+    background-color: aquamarine;
+}
+
+.info-title h1 {
+    font-family: "Caveat";
+    font-size: 28px;
+    margin-left: 12.8%;
+}
+
+.main {
+    background-color: aqua;
+}

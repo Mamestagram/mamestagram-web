@@ -2,10 +2,10 @@
 <html lang = "ja">
 <head>
     <meta charset = "utf-8">
-    <title>LeaderBoard</title>
+    <title>Leaderboard</title>
     <%- include("link") %>
     <link rel = "stylesheet" href = "/css/leaderboard.css">
-    <link rel = "stylesheet" href = "/css/mode-<%= mode %>.css">
+    <link rel = "stylesheet" href = "/css/mode/<%= mode %>.css">
 </head>
 <body>
 <%- include("header") %>
@@ -15,22 +15,22 @@
         <ul class = "mode">
             <li class = "std">
                 <a href = "/leaderboard/mode=std/special=<%= sp %>">
-                    <img src = "/image/mode-osu.png">
+                    <img src = "/image/mode/osu.png">
                 </a>
             </li>
             <li class = "taiko">
                 <a href = "/leaderboard/mode=taiko/special=<%= sp %>">
-                    <img src = "/image/mode-taiko.png">
+                    <img src = "/image/mode/taiko.png">
                 </a>
             </li>
             <li class = "catch">
                 <a href = "/leaderboard/mode=ctb/special=<%= sp %>">
-                    <img src = "/image/mode-fruits.png">
+                    <img src = "/image/mode/fruits.png">
                 </a>
             </li>
             <li class = "mania">
                 <a href = "/leaderboard/mode=mania/special=<%= sp %>">
-                    <img src = "/image/mode-mania.png">
+                    <img src = "/image/mode/mania.png">
                 </a>
             </li>
         </ul>

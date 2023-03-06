@@ -90,30 +90,35 @@ app.get("/profile/id=:id/mode=:mode/special=:sp", (req, res) => {
     const query = new Array(4);
     mode_num = getModeNum(req.params.sp, req.params.mode);
     connection.query(
-        "SELECT name, " +
+        "SELECT name, country, " +
         "(SELECT COUNT(*) + 1 " +
-        "  FROM stats " +
-        "  WHERE pp > (" +
-        "      SELECT pp " +
-        "      FROM stats " +
-        "      WHERE id = ? " +
-        "      AND mode = ?)" +
-        "  AND mode = ?) AS 'GRanking', " +
+        "    FROM stats " +
+        "    WHERE pp > ( " +
+        "        SELECT pp " +
+        "        FROM stats " +
+        "        WHERE id = ? " +
+        "        AND mode = ?) " +
+        "    AND mode = ?) AS 'GRanking', " +
         "(SELECT COUNT(*) + 1 " +
-        "  FROM stats " +
-        "  WHERE pp > ( " +
-        "      SELECT pp " +
-        "      FROM stats " +
-        "      WHERE id = ? " +
-        "      AND mode = ?)" +
-        "  AND mode = ?) AS 'CRanking', " +
-        "acc, plays, total_hits, rscore, tscore, replay_views, pp, playtime " +
+        "    FROM stats " +
+        "    WHERE pp > ( " +
+        "        SELECT pp " +
+        "        FROM stats " +
+        "        WHERE id = ? " +
+        "        AND mode = ?) " +
+        "    AND mode = ?) AS 'CRanking', " +
+        "acc, plays, total_hits, rscore, tscore, max_combo, replay_views, " +
+        "(SELECT COUNT(*) " +
+        "    FROM user_achievements " +
+        "    WHERE userid = ?) AS 'medals', " +
+        "pp, playtime, xh_count, x_count, sh_count, s_count, a_count " +
         "FROM stats " +
         "JOIN users " +
         "ON stats.id = users.id " +
         "WHERE users.id = ? " +
         "AND mode = ?;",
-        [req.params.id, mode_num, mode_num, req.params.id, mode_num, mode_num, req.params.id, mode_num],
+        [req.params.id, mode_num, mode_num, req.params.id, mode_num, mode_num,
+            req.params.id, req.params.id, mode_num],
         (error, results) => {
             query[0] = results[0];
         }
