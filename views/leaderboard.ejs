@@ -5,7 +5,7 @@
     <title>Leaderboard</title>
     <%- include("link") %>
     <link rel = "stylesheet" href = "/css/leaderboard.css">
-    <link rel = "stylesheet" href = "/css/mode/<%= mode %>.css">
+    <link rel = "stylesheet" href = "/css/Lmode/<%= mode %>.css">
 </head>
 <body>
 <%- include("header") %>
@@ -49,7 +49,7 @@
         </div>
         <% rankings.forEach((ranking) => { %>
             <div class = "ranking-data">
-                <span class = "ranking">#<%= ranking.ranking %></span>
+                <span class = "ranking">#<%= ranking.ranking.toLocaleString() %></span>
                 <span class = "flag-icon flag-icon-<%= ranking.country %>"></span>
                 <span class = "name">
                     <a href = "/profile/id=<%= ranking.id %>/mode=<%= mode %>/special=<%= sp %>">

@@ -164,7 +164,8 @@ app.get("/profile/id=:id/mode=:mode/special=:sp", (req, res) => {
         (error, results) => {
             query[3] = results;
             res.render("profile.ejs", {info: query[0], bestpp: query[1],
-                bestplaytimes: query[2], recentplays: query[3]});
+                bestplaytimes: query[2], recentplays: query[3], id: req.params.id,
+                mode: req.params.mode, sp: req.params.sp});
         }
     );
 });

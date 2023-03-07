@@ -1,10 +1,10 @@
 <% const getPlayTime = (n) => {
     let res = "";
-    res += Math.floor(n / 86400) + "d ";
+    res += Math.floor(n / 86400).toLocaleString() + "d ";
     n %= 86400;
-    res += Math.floor(n / 3600) + "h ";
+    res += Math.floor(n / 3600).toLocaleString() + "h ";
     n %= 3600;
-    res += Math.floor(n / 60) + "m";
+    res += Math.floor(n / 60).toLocaleString() + "m";
     return res;
 } %>
 <!DOCTYPE html>
@@ -14,6 +14,7 @@
         <title><%= info.name %>'s Profile</title>
         <%- include("link") %>
         <link rel = "stylesheet" href = "/css/profile.css">
+        <link rel = "stylesheet" href = "/css/Pmode/<%= mode %>.css">
     </head>
     <body>
         <%- include("header") %>
@@ -21,32 +22,107 @@
             <h1>Player Information</h1>
         </div>
         <div class = "main">
-            <div class = "player">
+            <div class = "player-banner">
                 <span class = "flag-icon flag-icon-<%= info.country %>"></span>
                 <span class = "name"><%= info.name %></span>
-                <span class = "std-icon"><img src = "/image/mode/osu.png"></span>
-                <span class = "taiko-icon"><img src = "/image/mode/taiko.png"></span>
-                <span class = "catch-icon"><img src = "/image/mode/fruits.png"></span>
-                <span class = "mania-icon"><img src = "/image/mode/mania.png"></span>
+                <span class = "mania-icon">
+                    <a href = "/profile/id=<%= id %>/mode=mania/special=<%= sp %>">
+                        <img src = "/image/mode/mania.png">
+                    </a>
+                </span>
+                <span class = "catch-icon">
+                    <a href = "/profile/id=<%= id %>/mode=ctb/special=<%= sp %>">
+                        <img src = "/image/mode/fruits.png">
+                    </a>
+                </span>
+                <span class = "taiko-icon">
+                    <a href = "/profile/id=<%= id %>/mode=taiko/special=<%= sp %>">
+                        <img src = "/image/mode/taiko.png">
+                    </a>
+                </span>
+                <span class = "std-icon">
+                    <a href = "/profile/id=<%= id %>/mode=std/special=<%= sp %>">
+                        <img src = "/image/mode/osu.png">
+                    </a>
+                </span>
             </div>
             <div class = "player-info">
-                <span class = "global">#<%= info.GRanking %></span>
-                <span class = "country">#<%= info.CRanking %></span><br>
-                <span class = "medals"><%= info.medals %></span>
-                <span class = "pp"><%= info.pp %></span>
-                <span class = "playtime"><%= getPlayTime(info.playtime) %></span>
-                <span class = "xh"><%= info.xh_count %></span>
-                <span class = "x"><%= info.x_count %></span>
-                <span class = "sh"><%= info.sh_count %></span>
-                <span class = "s"><%= info.s_count %></span>
-                <span class = "a"><%= info.a_count %></span><br>
-                <span class = "acc"><%= info.acc %></span>
-                <span class = "playcount"><%= info.plays %></span>
-                <span class = "hits"><%= info.total_hits %></span>
-                <span class = "ranked-score"><%= info.rscore %></span>
-                <span class = "total-score"><%= info.tscore %></span>
-                <span class = "maxcombo"><%= info.max_combo %></span>
-                <span class = "replayed"><%= info.replay_views %></span>
+                <div class = "stats">
+                    <div class = "global-ranking">
+                        <span class = "title">Global Ranking</span><br>
+                        <span class = "value">#<%= info.GRanking.toLocaleString() %></span>
+                    </div>
+                    <div class = "country-ranking">
+                        <span class = "title">Country Ranking</span><br>
+                        <span class = "value">#<%= info.CRanking.toLocaleString() %></span>
+                    </div>
+                    <div class = "medals">
+                        <span class = "title">Medals</span><br>
+                        <span class = "value"><%= info.medals.toLocaleString() %></span>
+                    </div>
+                    <div class = "pp">
+                        <span class = "title">pp</span><br>
+                        <span class = "value"><%= info.pp.toLocaleString() %></span>
+                    </div>
+                    <div class = "playtime">
+                        <span class = "title">Total Play TIme</span><br>
+                        <span class = "value"><%= getPlayTime(info.playtime) %></span>
+                    </div>
+                    <div class = "grade-amounts">
+                        <div class = "xh">
+                            <img src = "/image/grade/XH.png"><br>
+                            <span class = "value"><%= info.xh_count.toLocaleString() %></span>
+                        </div>
+                        <div class = "x">
+                            <img src = "/image/grade/X.png"><br>
+                            <span class = "value"><%= info.x_count.toLocaleString() %></span>
+                        </div>
+                        <div class = "sh">
+                            <img src = "/image/grade/SH.png"><br>
+                            <span class = "value"><%= info.sh_count.toLocaleString() %></span>
+                        </div>
+                        <div class = "s">
+                            <img src = "/image/grade/S.png"><br>
+                            <span class = "value"><%= info.s_count.toLocaleString() %></span>
+                        </div>
+                        <div class = "a">
+                            <img src = "/image/grade/A.png"><br>
+                            <span class = "value"><%= info.a_count.toLocaleString() %></span>
+                        </div>
+                    </div>
+                </div>
+                <div class = "scores">
+                    <div class = "title">
+                        <span class = "acc">Hit Accuracy</span>
+                        <span class = "playcount">Plau Count</span>
+                        <span class = "hits">Total Hits</span>
+                        <span class = "ranked-score">Ranked Score</span>
+                        <span class = "total-score">Total Score</span>
+                        <span class = "maxcombo">Maximum Combo</span>
+                        <span class = "replayed">Peplays Watched</span>
+                    </div>
+                    <div class = "value">
+                        <span class = "acc"><%= info.acc.toFixed(2) %>%</span>
+                        <span class = "playcount"><%= info.plays.toLocaleString() %></span>
+                        <span class = "hits"><%= info.total_hits.toLocaleString() %></span>
+                        <span class = "ranked-score"><%= info.rscore.toLocaleString() %></span>
+                        <span class = "total-score"><%= info.tscore.toLocaleString() %></span>
+                        <span class = "maxcombo"><%= info.max_combo.toLocaleString() %></span>
+                        <span class = "replayed"><%= info.replay_views.toLocaleString() %></span>
+                    </div>
+                </div>
+            </div>
+            <div class = "bestpp-list">
+                <% bestpp.forEach((map) => { %>
+                    <div>
+                        <span><%= map.grade %></span>
+                        <span><%= map.title %></span>
+                        <span><%= map.artist %></span>
+                        <span><%= map.mods %></span>
+                        <span><%= map.acc.toFixed(2) %></span>
+                        <span><%= Math.round(map.pp).toLocaleString() %></span>
+                    </div>
+                <% }); %>
             </div>
         </div>
     </body>

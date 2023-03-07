@@ -17,3 +17,8 @@
     font-family: "Caveat";
     src: url("../font/Caveat-Regular.ttf");
 }
+
+@font-face {
+    font-family: "Righteous";
+    src: url("../font/Righteous-Regular.ttf");
+}

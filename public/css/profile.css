@@ -1,9 +1,5 @@
 /* ------------------------------------------------- */
 .info-title {
-    background-color: aquamarine;
-}
-
-.info-title h1 {
     font-family: "Caveat";
     font-size: 40px;
     font-weight: bold;
@@ -12,4 +8,139 @@
 
 .main {
     background-color: aqua;
+    height: 2000px;
 }
+/* ------------------------------------------------- */
+.player-banner {
+    font-family: "Righteous";
+    position: relative;
+    background-color: white;
+    top: 50px;
+    padding-top: 10px;
+    margin-left: 12.8%;
+    height: 100px;
+    width: 73%;
+    box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.flag-icon {
+    height: 24px;
+    width: 32px;
+    bottom: 12px;
+    margin-left: 10px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+.name {
+    font-size: 40px;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.player-banner span img {
+    width: 50px;
+    float: right;
+    filter: invert(50%);
+    margin: 35px 1% 0 1%;
+    opacity: 95%;
+}
+
+.player-banner span img:hover {
+    filter: invert(100%);
+    opacity: 100%;
+}
+/* ------------------------------------------------- */
+.player-info {
+    font-family: "Righteous";
+    position: relative;
+    background-color: white;
+    top: 80px;
+    padding-top: 15px;
+    padding-left: 20px;
+    margin-left: 12.8%;
+    height: 290px;
+    width: 73%;
+    box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+/* ------------------------------------------------- */
+.stats div {
+    position: relative;
+}
+
+.stats div .title {
+    font-size: 16px;
+}
+
+.stats div .value {
+    font-size: 32px;
+    color: orangered;
+}
+
+.country-ranking {
+    bottom: 56px;
+    padding-left: 150px;
+}
+
+.pp {
+    bottom: 55px;
+    padding-left: 12%;
+}
+
+.playtime {
+    bottom: 110px;
+    padding-left: 24%;
+}
+
+.grade-amounts {
+    display: flex;
+    bottom: 80px;
+}
+
+.grade-amounts div {
+    text-align: center;
+    margin: 0 2%;
+}
+
+.grade-amounts div img {
+    height: 45px;
+    width: 45px;
+    background-color: rgba(199, 21, 133, 0.5);
+    border-radius: 10px;
+}
+
+.grade-amounts div .value {
+    font-size: 20px;
+    color: midnightblue;
+}
+/* ------------------------------------------------- */
+.scores {
+    position: relative;
+    bottom: 338px;
+    padding-left: 2%;
+    margin-left: 60%;
+    border-left: 0.6mm solid dimgray;
+}
+
+.scores .title {
+    float: left;
+    font-size: 20px;
+}
+
+.scores .title span {
+    display: flex;
+    padding: 6px 0;
+}
+
+.scores .value {
+    position: relative;
+    font-size: 20px;
+    left: 100px;
+}
+
+.scores .value span {
+    display: flex;
+    padding: 6px 0;
+}
+/* ------------------------------------------------- */
