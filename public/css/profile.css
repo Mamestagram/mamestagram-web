@@ -7,12 +7,12 @@
 }
 
 .main {
+    font-family: "Righteous";
     background-color: aqua;
     height: 2000px;
 }
 /* ------------------------------------------------- */
 .player-banner {
-    font-family: "Righteous";
     position: relative;
     background-color: white;
     top: 50px;
@@ -52,7 +52,6 @@
 }
 /* ------------------------------------------------- */
 .player-info {
-    font-family: "Righteous";
     position: relative;
     background-color: white;
     top: 80px;
@@ -96,6 +95,7 @@
 .grade-amounts {
     display: flex;
     bottom: 80px;
+    padding-bottom: -1000px;
 }
 
 .grade-amounts div {
@@ -144,3 +144,20 @@
     padding: 6px 0;
 }
 /* ------------------------------------------------- */
+.bestpp-list {
+    position: relative;
+    background-color: white;
+    top: 160px;
+    padding-top: 15px;
+    margin-left: 12.8%;
+    height: 1000px;
+    width: 73%;
+    box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.bestpp-list .list {
+    display: flex;
+    background-color: rgba(199, 21, 133, 0.8);
+    border-radius: 15px;
+}

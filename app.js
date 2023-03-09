@@ -3,6 +3,8 @@
 const express = require("express");
 const mysql = require("mysql");
 const session = require("express-session");
+const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+const {toJSON} = require("express-session/session/cookie");
 const app = express();
 
 app.use(express.static("public"));
@@ -124,7 +126,7 @@ app.get("/profile/id=:id/mode=:mode/special=:sp", (req, res) => {
         }
     );
     connection.query(
-        "SELECT grade, title, artist, mods, acc, pp " +
+        "SELECT filename, grade, title, artist, mods, acc, pp " +
         "FROM scores " +
         "JOIN maps " +
         "ON map_md5 = md5 " +

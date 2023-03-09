@@ -7,6 +7,37 @@
     res += Math.floor(n / 60).toLocaleString() + "m";
     return res;
 } %>
+
+<% const getMods = (n) => {
+    const mod = new Array(0);
+    const mods = ["nf", "ez", "", "hd", "hr", "sd", "dt", "", "ht", "nc", "fl"];
+    if (n >= 16416) {
+        mod.push("pf");
+        n -= 16416;
+    }
+    for (let i = 10; n !== 0; i--) {
+        if (i !== 2 && i !== 7 && n >= Math.pow(2, i)) {
+            if (i === 9) {
+                n -= Math.pow(2, 6);
+            }
+            mod.push(mods[i]);
+            n -= Math.pow(2, i);
+        }
+    }
+    return mod;
+} %>
+
+<% const getDiff = (file) => {
+    let diff = "", i = 0;
+    while (file[i] !== "[") {
+        i++;
+    }
+    for (i += 1; file[i] !== "]"; i++) {
+        diff += file[i];
+    }
+    return diff;
+} %>
+
 <!DOCTYPE html>
 <html lang = "ja">
     <head>
@@ -112,15 +143,23 @@
                     </div>
                 </div>
             </div>
+            <h1 class = "bestpp-title">Best Performance</h1>
             <div class = "bestpp-list">
                 <% bestpp.forEach((map) => { %>
-                    <div>
-                        <span><%= map.grade %></span>
-                        <span><%= map.title %></span>
-                        <span><%= map.artist %></span>
-                        <span><%= map.mods %></span>
-                        <span><%= map.acc.toFixed(2) %></span>
-                        <span><%= Math.round(map.pp).toLocaleString() %></span>
+                    <div class = "list">
+                        <img src = "/image/grade/<%= map.grade %>.png" class = "grade">
+                        <span class = "map-info">
+                            <%= map.title %> by <%= map.artist %><br>
+                            <%= getDiff(map.filename) %>
+                        </span>
+                        <span class = "mods">
+                            <% const mods = getMods(map.mods) %>
+                            <% for (let i = mods.length - 1; i >= 0; i--) { %>
+                                <img src = "/image/mods/<%= mods[i] %>.png" class = "mods-icon">
+                            <% } %>
+                        </span>
+                        <span class = "acc"><%= map.acc.toFixed(2) %>%</span>
+                        <span class = "pp"><%= Math.round(map.pp).toLocaleString() %>pp</span>
                     </div>
                 <% }); %>
             </div>
