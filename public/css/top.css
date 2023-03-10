@@ -1,3 +1,6 @@
+body {
+    min-width: 1200px;
+}
 /* ------------------------------------------------- */
 .home-text {
     border-bottom: 3px solid mediumslateblue;

@@ -143,14 +143,15 @@
                     </div>
                 </div>
             </div>
-            <h1 class = "bestpp-title">Best Performance</h1>
             <div class = "bestpp-list">
+                <h1>Best Performance</h1>
+                <% let j = 0 %>
                 <% bestpp.forEach((map) => { %>
                     <div class = "list">
                         <img src = "/image/grade/<%= map.grade %>.png" class = "grade">
                         <span class = "map-info">
-                            <%= map.title %> by <%= map.artist %><br>
-                            <%= getDiff(map.filename) %>
+                            <span class = "title"><%= map.title %> by <%= map.artist %></span>
+                            <span class = "diff"><%= getDiff(map.filename) %></span>
                         </span>
                         <span class = "mods">
                             <% const mods = getMods(map.mods) %>
@@ -159,8 +160,12 @@
                             <% } %>
                         </span>
                         <span class = "acc"><%= map.acc.toFixed(2) %>%</span>
-                        <span class = "pp"><%= Math.round(map.pp).toLocaleString() %>pp</span>
+                        <span class = "pp">
+                            <span class = "normal"><%= Math.round(map.pp).toLocaleString() %>pp</span>
+                            <span class = "weighted">(<%= Math.round(map.pp * Math.pow(0.95, j)).toLocaleString() %>pp)</span>
+                        </span>
                     </div>
+                <% j++ %>
                 <% }); %>
             </div>
         </div>
