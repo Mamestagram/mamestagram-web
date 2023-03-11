@@ -10,15 +10,24 @@ const getPlayTime = (n) => {
 
 const getMods = (n) => {
     const mod = new Array(0);
-    const mods = ["nf", "ez", "", "hd", "hr", "sd", "dt", "", "ht", "nc", "fl"];
-    if (n >= 16416) {
-        mod.push("pf");
-        n -= 16416;
+    const mods = ["nf", "ez", "", "hd", "hr", "sd", "dt", "", "ht", "nc", "fl", "", "so", "", "pf"];
+    if (n >= 536870912) {
+        mod.push("scoreV2");
+        n -= 536870912;
     }
-    for (let i = 10; n !== 0; i--) {
-        if (i !== 2 && i !== 7 && n >= Math.pow(2, i)) {
-            if (i === 9) {
-                n -= Math.pow(2, 6);
+    for (let i = 14; i >= 0; i--) {
+        if (i !== 2 && i !== 11 && n >= Math.pow(2, i)) {
+            switch (i) {
+                case 14:
+                    n -= Math.pow(2, 5);
+                    break;
+                case 9:
+                    n -= Math.pow(2, 6);
+                    break;
+                case 13:
+                case 7:
+                    n -= Math.pow(2, i);
+                    continue;
             }
             mod.push(mods[i]);
             n -= Math.pow(2, i);
@@ -38,4 +47,4 @@ const getDiff = (file) => {
     return diff;
 }
 
-console.log(getMods(0).length);
+console.log(getMods(128));
