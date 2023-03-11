@@ -3,7 +3,6 @@
 const express = require("express");
 const mysql = require("mysql");
 const session = require("express-session");
-const {toJSON} = require("express-session/session/cookie");
 const app = express();
 
 app.use(express.static("public"));

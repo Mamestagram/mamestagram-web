@@ -149,21 +149,21 @@
                 <% bestpp.forEach((map) => { %>
                     <div class = "list">
                         <img src = "/image/grade/<%= map.grade %>.png" class = "grade">
-                        <span class = "map-info">
-                            <span class = "title"><%= map.title %> by <%= map.artist %></span>
-                            <span class = "diff"><%= getDiff(map.filename) %></span>
-                        </span>
-                        <span class = "mods">
-                            <% const mods = getMods(map.mods) %>
-                            <% for (let i = mods.length - 1; i >= 0; i--) { %>
-                                <img src = "/image/mods/<%= mods[i] %>.png" class = "mods-icon">
-                            <% } %>
-                        </span>
-                        <span class = "acc"><%= map.acc.toFixed(2) %>%</span>
-                        <span class = "pp">
-                            <span class = "normal"><%= Math.round(map.pp).toLocaleString() %>pp</span>
-                            <span class = "weighted">(<%= Math.round(map.pp * Math.pow(0.95, j)).toLocaleString() %>pp)</span>
-                        </span>
+                        <div class = "map-info">
+                            <p class = "title"><%= map.title %> by <%= map.artist %></p>
+                            <p class = "diff"><%= getDiff(map.filename) %></p>
+                        </div>
+                        <div class = "scores">
+                            <span class = "pp-weighted">(<%= Math.round(map.pp * Math.pow(0.95, j)).toLocaleString() %>pp)</span>
+                            <span class = "pp-recorded"><%= Math.round(map.pp).toLocaleString() %>pp</span>
+                            <span class = "acc"><%= map.acc.toFixed(2) %>%</span>
+                            <span class = "mods">
+                                <% const mods = getMods(map.mods) %>
+                                <% for (let i = mods.length - 1; i >= 0; i--) { %>
+                                    <img src = "/image/mods/<%= mods[i] %>.png">
+                                <% } %>
+                            </span>
+                        </div>
                     </div>
                 <% j++ %>
                 <% }); %>

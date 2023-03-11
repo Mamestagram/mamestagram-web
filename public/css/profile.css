@@ -152,7 +152,7 @@ body {
 .bestpp-list {
     position: absolute;
     background-color: white;
-    top: 600px;
+    top: 580px;
     margin-left: 12.8%;
     width: 73%;
     min-width: 1030px;
@@ -161,7 +161,6 @@ body {
 }
 
 .bestpp-list .list {
-    display: flex;
     height: 60px;
     line-height: 30px;
     width: auto;
@@ -188,19 +187,64 @@ body {
 }
 
 .bestpp-list .list .map-info .title {
-    font-size: 20px;
+    position: relative;
+    left: 50px;
+    bottom: 43px;
+    display: flex;
+    font-size: 18px;
+    min-width: 100px;
+    max-width: 700px;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
 }
 
-.bestpp-list .list .mods .mods-icon {
+.bestpp-list .list .map-info .diff {
+    position: relative;
+    left: 50px;
+    bottom: 45px;
+    font-size: 14px;
+}
+
+.bestpp-list .list .scores {
+    font-family: "Ubuntu";
+    font-weight: bold;
+    position: relative;
+    bottom: 60px;
+}
+
+.bestpp-list .list .mods {
+    float: right;
+}
+
+.bestpp-list .list img {
     position: relative;
     height: 45px;
     width: 45px;
-    top: 7px;
+    bottom: 7px;
+}
+
+.bestpp-list .list .acc {
+    float: right;
+    width: 100px;
+    text-align: center;
 }
 
 .bestpp-list .list .pp {
     float: right;
+}
+
+.bestpp-list .list .pp-recorded {
+    float: right;
+    font-size: 26px;
+    width: 70px;
+    max-width: 500px;
+    text-align: center;
+}
+
+.bestpp-list .list .pp-weighted {
+    float: right;
+    width: 70px;
+    max-width: 500px;
+    text-align: center;
 }
